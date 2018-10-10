@@ -1,9 +1,15 @@
+use std::env;
+
 pub fn ret_environment() -> &'static str{
     if cfg!(target_os = "windows") {
         "Windows"
     } else if cfg!(target_os = "macos") {
         "MacOS"
     } else {
-        env!("XDG_CURRENT_DESKTOP")
+        let key = "XDG_CURRENT_DESKTOP";
+        match env::var(key) {
+            Ok(val) => key,
+            Err(e) => "Unknown",
+        }
     }
 }
