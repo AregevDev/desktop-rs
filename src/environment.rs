@@ -8,8 +8,8 @@ pub fn ret_environment() -> &'static str{
     } else {
         let key = "XDG_CURRENT_DESKTOP";
         match env::var(key) {
-            Ok(val) => key,
-            Err(e) => "Unknown",
+            Ok(_) => key,
+            Err(_) => "Unknown",
         }
     }
 }
