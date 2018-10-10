@@ -1,5 +1,6 @@
 #![feature(cfg_target_vendor)]
 
+// importing modules
 mod os_name;
 mod arch;
 mod vendor;
@@ -11,16 +12,17 @@ pub mod desktop {
     use vendor::ret_vendor;
     use environment::ret_environment;
 
+    // the main struct of the library, contains the OS information
     #[derive(Debug)]
     pub struct Desktop {
         os_name: &'static str,
-        // pub version: &'static str,
         arch: &'static str,
         environment: &'static str,
         vendor: &'static str
     }
 
     impl Desktop {
+        // returns the target desktop information
         pub fn get() -> Self {
             Desktop {
                 os_name: ret_os_name(),
@@ -45,11 +47,5 @@ pub mod desktop {
         pub fn vendor(&self) -> &'static str {
             self.vendor
         }
-    }
-
-    #[test]
-    fn test_struct() {
-        let d = Desktop::get();
-        println!("{}", d.environment());
     }
 }
