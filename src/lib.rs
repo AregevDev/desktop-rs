@@ -10,9 +10,9 @@ use environment::ret_environment;
 // the main struct of the library, contains the OS information
 #[derive(Debug)]
 pub struct Desktop {
-    os_name: &'static str,
-    arch: &'static str,
-    environment: &'static str,
+    os_name: String,
+    arch: String,
+    environment: String,
 }
 
 impl Desktop {
@@ -25,16 +25,16 @@ impl Desktop {
         }
     }
 
-    pub fn os_name(&self) -> &'static str {
-        self.os_name
+    pub fn os_name(&self) -> String {
+        self.os_name.clone()
     }
 
-    pub fn arch(&self) -> &'static str {
-        self.arch
+    pub fn arch(&self) -> String {
+        self.arch.clone()
     }
 
-    pub fn environment(&self) -> &'static str {
-        self.environment
+    pub fn environment(&self) -> String {
+        self.environment.clone()
     }
 }
 

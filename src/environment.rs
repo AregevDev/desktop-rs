@@ -1,15 +1,17 @@
 use std::env;
 
-pub fn ret_environment() -> &'static str{
+pub fn ret_environment() -> String{
     if cfg!(target_os = "windows") {
-        "Windows"
+        "Windows".to_string()
     } else if cfg!(target_os = "macos") {
-        "MacOS"
+        "MacOS".to_string()
     } else {
         let key = "XDG_CURRENT_DESKTOP";
-        match env::var(key) {
-            Ok(_) => key,
-            Err(_) => "Unknown",
-        }
+        let env = match env::var(key) {
+            Ok(v) => v,
+            Err(_) => "".to_string(),
+        };
+
+        env
     }
 }
