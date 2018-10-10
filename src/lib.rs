@@ -3,35 +3,37 @@
 mod os_name;
 mod arch;
 mod vendor;
+mod environment;
 
 pub mod desktop {
     use os_name::ret_os_name;
     use arch::ret_arch;
     use vendor::ret_vendor;
+    use environment::ret_environment;
 
+    #[derive(Debug)]
     pub struct Desktop {
-        os_name: &'static str,
-        // version: &'static str,
-        arch: &'static str,
-        environment: &'static str,
-        vendor: &'static str
+        pub os_name: &'static str,
+        // pub version: &'static str,
+        pub arch: &'static str,
+        pub environment: &'static str,
+        pub vendor: &'static str
     }
 
     impl Desktop {
         pub fn get() -> Self {
             Desktop {
                 os_name: ret_os_name(),
-                arch: "",
-                environment: "",
-                vendor: "",
+                arch: ret_arch(),
+                environment: ret_environment(),
+                vendor: ret_vendor(),
             }
         }
     }
 
     #[test]
-    fn t() {
-        println!("{}", ret_os_name());
-        println!("{}", ret_arch());
-        println!("{}", ret_vendor());
+    fn test_struct() {
+        let d = Desktop::get();
+        println!("{:?}", d);
     }
 }
