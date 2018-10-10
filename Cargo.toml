@@ -9,6 +9,7 @@ categories = ["os"]
 license = "Apache 2.0"
 
 [badges]
+travis-ci = { repository = "AregevDev/desktop-rs" }
 
 [dependencies]
 
