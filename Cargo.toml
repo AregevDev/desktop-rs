@@ -2,7 +2,7 @@
 name = "desktop"
 version = "0.1.0"
 authors = ["AregevDev <aregevdev@gmail.com>"]
-description = "Detects the target platform and it's architecture, vendor and desktop enviorment"
+description = "Detects the target platform and it's architecture, vendor and desktop environment"
 repository = "https://github.com//AregevDev//desktop-rs"
 keywords = ["desktop", "desktop-rs", "os"]
 categories = ["os"]
