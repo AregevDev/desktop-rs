@@ -6,7 +6,7 @@ description = "Detects the target platform and it's architecture, vendor and des
 repository = "https://github.com//AregevDev//desktop-rs"
 keywords = ["desktop", "desktop-rs", "os"]
 categories = ["os"]
-license = "Apache 2.0"
+license = "Apache License 2.0"
 readme = "README.md"
 
 [badges]
