@@ -13,11 +13,11 @@ pub mod desktop {
 
     #[derive(Debug)]
     pub struct Desktop {
-        pub os_name: &'static str,
+        os_name: &'static str,
         // pub version: &'static str,
-        pub arch: &'static str,
-        pub environment: &'static str,
-        pub vendor: &'static str
+        arch: &'static str,
+        environment: &'static str,
+        vendor: &'static str
     }
 
     impl Desktop {
@@ -29,11 +29,27 @@ pub mod desktop {
                 vendor: ret_vendor(),
             }
         }
+
+        pub fn os_name(&self) -> &'static str {
+            self.os_name
+        }
+
+        pub fn arch(&self) -> &'static str {
+            self.arch
+        }
+
+        pub fn environment(&self) -> &'static str {
+            self.environment
+        }
+
+        pub fn vendor(&self) -> &'static str {
+            self.vendor
+        }
     }
 
     #[test]
     fn test_struct() {
         let d = Desktop::get();
-        println!("{:?}", d);
+        println!("{}", d.environment());
     }
 }
