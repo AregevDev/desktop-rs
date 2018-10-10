@@ -1,15 +1,11 @@
-#![feature(cfg_target_vendor)]
-
 // importing modules
 mod os_name;
 mod arch;
-mod vendor;
 mod environment;
 
 pub mod desktop {
     use os_name::ret_os_name;
     use arch::ret_arch;
-    use vendor::ret_vendor;
     use environment::ret_environment;
 
     // the main struct of the library, contains the OS information
@@ -18,7 +14,6 @@ pub mod desktop {
         os_name: &'static str,
         arch: &'static str,
         environment: &'static str,
-        vendor: &'static str
     }
 
     impl Desktop {
@@ -28,7 +23,6 @@ pub mod desktop {
                 os_name: ret_os_name(),
                 arch: ret_arch(),
                 environment: ret_environment(),
-                vendor: ret_vendor(),
             }
         }
 
@@ -42,10 +36,6 @@ pub mod desktop {
 
         pub fn environment(&self) -> &'static str {
             self.environment
-        }
-
-        pub fn vendor(&self) -> &'static str {
-            self.vendor
         }
     }
 
