@@ -17,7 +17,7 @@ fn main() {
 
 For the 2015 edition just add `extern crate desktop;` at the top of the file
 
-[Documentation]()
+[Documentation](https://docs.rs/desktop/1.0.2/desktop/)
 
 ### Issues
 Feel free to hop over https://github.com/AregevDev/desktop-rs/issues
