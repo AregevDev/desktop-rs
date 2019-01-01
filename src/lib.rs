@@ -36,7 +36,9 @@ impl Desktop {
 
     /// Retrieves the desktop environment of the OS (Linux only)
     ///
-    /// Otherwise, will return the name of the OS
+    /// Otherwise, if it's not Linux or it was not able to detect the desktop environment (`option_env!` returns `Err`),
+    ///
+    /// it will return the name of the OS
     pub fn environment(&self) -> &'static str {
         self.environment
     }
