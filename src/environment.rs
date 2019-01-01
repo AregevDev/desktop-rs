@@ -1,17 +1,9 @@
-use std::env;
+use crate::os_name::ret_os_name;
 
-pub fn ret_environment() -> String{
-    if cfg!(target_os = "windows") {
-        "Windows".to_string()
-    } else if cfg!(target_os = "macos") {
-        "MacOS".to_string()
+pub fn ret_environment() -> &'static str {
+    if cfg!(not(target_os = "linux")) {
+        ret_os_name()
     } else {
-        let key = "XDG_CURRENT_DESKTOP";
-        let env = match env::var(key) {
-            Ok(v) => v,
-            Err(_) => "".to_string(),
-        };
-
-        env
+        env!("XDG_CURRENT_DESKTOP")
     }
 }
