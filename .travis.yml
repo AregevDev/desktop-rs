@@ -8,6 +8,5 @@ matrix:
     - rust: nightly
     fast_finish: true
 script:
-    - export XDG_CURRENT_DESKTOP Dunno
     - cargo build --verbose --all --release
     - cargo test --verbose --all --release -- --nocapture
