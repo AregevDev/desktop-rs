@@ -1,6 +1,6 @@
 [package]
 name = "desktop"
-version = "1.0.2"
+version = "1.0.3"
 authors = ["AregevDev <aregevdev@gmail.com>"]
 description = "Detects the target platform and it's architecture, vendor and desktop environment"
 repository = "https://github.com//AregevDev//desktop-rs"
