@@ -1,12 +1,12 @@
 [package]
 name = "desktop"
-version = "1.0.3"
+version = "1.0.4"
 authors = ["AregevDev <aregevdev@gmail.com>"]
 description = "Detects the target platform and it's architecture, vendor and desktop environment"
 repository = "https://github.com//AregevDev//desktop-rs"
 keywords = ["desktop", "desktop-rs", "os"]
 categories = ["os"]
-documentation = "https://docs.rs/desktop/1.0.2/desktop/"
+documentation = "https://docs.rs/desktop/1.0.4/desktop/"
 license = "Apache-2.0"
 readme = "README.md"
 editon = "2018"
